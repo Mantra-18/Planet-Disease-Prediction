@@ -1,0 +1,38 @@
+You said:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Plant Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+            <a href="index.html"  class="logo">PhytoScan</a>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a id="button1" href="#">contact us</a>
+    </nav>
+    <div class="container">
+        <h1>Plant Disease Prediction</h1>
+        <form method="post" enctype="multipart/form-data" action="/">
+            <input type="file" name="image" required>
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if image %}
+            <h2>Prediction Result</h2>
+            <img src="{{ url_for('static', filename=image.split('static/', 1)[-1]) }}">
+            <p><strong>Disease:</strong> {{ disease }}</p>
+            <p><strong>Confidence:</strong> {{ confidence|round(2) }}%</p>
+        {% endif %}
+    </div>
+    <footer class="footer">
+        <p>&copy; 2025 PhytoScan | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background: url('/static/images/plant_disease_background.jpg') no-repeat center center/cover;
+    height: 100vh;
+    background-size:cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+}
+
+
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 60%;
+    animation: fadeIn 1s ease-in-out;
+}
+
+
+h1 {
+    font-size: 3.5rem;
+    color: #435c76;
+    margin-bottom: 20px;
+    animation: slideDown 1s ease-in-out;
+}
+
+
+input[type="file"] {
+    margin: 15px 0;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+    color: white;
+}
+
+
+img {
+    margin-top: 15px;
+    width: 100%;
+    max-width: 350px;
+    border-radius: 10px;
+    animation: fadeIn 1s ease-in-out;
+}
+p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        width: 80%;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    button {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: black;
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: top 0.5s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    
+}
+
+.navbar .logo {
+    color: #218838;
+    font-size: 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    font-size:20px;
+}
+a:hover{
+    transform:scale(1.1);
+    color:#218838;
+}
+
+#button1 {
+    background-color: #28a745;
+    padding: 10px 15px;
+    border-radius: 5px;
+    
+}
+
+#button1:hover {
+    background-color: #218838;
+    color: white;
+}
+
+
+.navbar-links {
+    display: flex;
+    gap: 15px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    .navbar-links {
+        flex-direction: column;
+    }
+    .navbar a {
+        padding: 10px;
+    }
+}
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
